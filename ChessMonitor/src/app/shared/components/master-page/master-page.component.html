@@ -1,0 +1,24 @@
+<div class="master-page-container">
+  <!-- Banner Section -->
+  <header class="banner-section">
+    <ng-container *ngTemplateOutlet="bannerTemplate"></ng-container>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="main-content-area">
+    <!-- Left Navigation -->
+    <nav class="left-navigation">
+      <ng-container *ngTemplateOutlet="leftNavigationTemplate"></ng-container>
+    </nav>
+
+    <!-- Content Section -->
+    <main class="content-section">
+      <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </main>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <ng-container *ngTemplateOutlet="footTemplate"></ng-container>
+  </footer>
+</div>

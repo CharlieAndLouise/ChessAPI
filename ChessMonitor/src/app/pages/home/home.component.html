@@ -1,0 +1,70 @@
+<app-master-page>
+  <!-- Banner Template -->
+  <ng-template #banner>
+    <div class="hero-section">
+      <h1 class="main-title">{{ title }}</h1>
+      <p class="subtitle">Monitor and analyze chess games in real-time</p>
+    </div>
+  </ng-template>
+
+  <!-- Left Navigation Template -->
+  <ng-template #leftNavigation>
+    <div class="nav-menu">
+      <ul>
+        <li><a href="#" class="nav-link">Dashboard</a></li>
+        <li><a href="#" class="nav-link">Game Analysis</a></li>
+        <li><a href="#" class="nav-link">Statistics</a></li>
+        <li><a href="#" class="nav-link">Training</a></li>
+        <li><a href="#" class="nav-link">Settings</a></li>
+      </ul>
+    </div>
+  </ng-template>
+
+  <!-- Main Content Template -->
+  <ng-template #content>
+    <div class="home-content">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">♟️</div>
+          <h3>Game Analysis</h3>
+          <p>Analyze chess positions and get insights into your games</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Statistics</h3>
+          <p>Track your progress with detailed statistics and performance metrics</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Real-time Monitoring</h3>
+          <p>Monitor live games and get real-time analysis</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Training Tools</h3>
+          <p>Improve your skills with targeted training exercises</p>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <button class="primary-button">Start Analyzing</button>
+        <button class="secondary-button">View Statistics</button>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Footer Template -->
+  <ng-template #foot>
+    <div class="footer-content">
+      <p>&copy; 2025 Chess Monitor. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms of Service</a>
+        <a href="#" class="footer-link">Contact</a>
+      </div>
+    </div>
+  </ng-template>
+</app-master-page>
