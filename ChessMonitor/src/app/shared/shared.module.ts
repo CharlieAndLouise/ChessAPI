@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MasterPageComponent } from './components';
+import { provideHttpClient } from '@angular/common/http';
 
 /**
  * SharedModule contains common functionality that can be used across the application.
@@ -13,6 +14,8 @@ import { MasterPageComponent } from './components';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+
+    
   ],
   declarations: [
     // Add shared components, directives, and pipes here
