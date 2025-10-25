@@ -22,37 +22,10 @@
 
   <!-- Main Content Template -->
   <ng-template #content>
-    <div class="home-content">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">♟️</div>
-          <h3>Game Analysis</h3>
-          <p>Analyze chess positions and get insights into your games</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Statistics</h3>
-          <p>Track your progress with detailed statistics and performance metrics</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Real-time Monitoring</h3>
-          <p>Monitor live games and get real-time analysis</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Training Tools</h3>
-          <p>Improve your skills with targeted training exercises</p>
-        </div>
-      </div>
-
-      <div class="cta-section">
-        <button class="primary-button">Start Analyzing</button>
-        <button class="secondary-button">View Statistics</button>
-      </div>
+    <!-- Create a text to search player -->
+    <div class="search-player">
+      <input type="text" placeholder="Search for a player..." [(ngModel)]="playerUsername" />
+      <button class="search-button" (click)="gotoPlayerPage()">Search</button>
     </div>
   </ng-template>
 

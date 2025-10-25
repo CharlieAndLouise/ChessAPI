@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared';
 import { PlayerService } from '../../shared/services/chess.com/player.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +12,20 @@ import { PlayerService } from '../../shared/services/chess.com/player.service';
 })
 export class HomeComponent {
   title = 'Chess Monitor';
-  
-  constructor(private playerService: PlayerService) { 
-    this.playerService.getPlayerProfile('hikaru').subscribe(
+  playerUsername = 'hikaru';
+
+  constructor(
+    private playerService: PlayerService,
+    private router: Router
+  ) { 
+    this.playerService.getPlayerProfile(this.playerUsername).subscribe(
       profile => {
         console.log('Player Profile:', profile);
       }
     );
+  }
+
+  gotoPlayerPage() {
+    this.router.navigate(['/player', this.playerUsername]);
   }
 }
