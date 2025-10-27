@@ -20,8 +20,10 @@
   <!-- Main Content Template -->
   <ng-template #content>
     <div class="player-content">
-      <h2>Player Information</h2>
-      <p>Player page content will go here...</p>
+      
+      <div id="player_profile">
+        <app-player-information [playerUsername]="playerUsername"></app-player-information>
+      </div>
     </div>
   </ng-template>
 

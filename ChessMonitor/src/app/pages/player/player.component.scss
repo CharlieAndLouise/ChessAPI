@@ -45,6 +45,10 @@
 
 .player-content {
   padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  
   
   h2 {
     margin-top: 0;

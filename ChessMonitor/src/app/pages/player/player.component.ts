@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SharedModule } from '../../shared';
+import { PlayerInformationComponent } from './player-information/player-information.component';
 
 @Component({
   selector: 'app-player',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, PlayerInformationComponent],
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.scss']
 })
@@ -19,6 +20,6 @@ export class PlayerComponent implements OnInit {
       this.playerUsername = params['username'] || '';
     });
 
-    
+
   }
 }

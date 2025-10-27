@@ -1,0 +1,16 @@
+<div class="player-information">
+  <h2>Player Information</h2>
+  <div class="player-details" *ngIf="playerUsername">
+    <div>
+      <img [src]="profile.avatar" alt="{{ playerUsername }}" class="avatar" />
+    </div>
+    <div class="username">
+      <span>{{profile.name}}</span>
+    </div>
+    <!-- Add more player information fields here -->
+    
+  </div>
+  <div class="no-player" *ngIf="!playerUsername">
+    <p>No player selected</p>
+  </div>
+</div>
