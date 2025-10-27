@@ -1,0 +1,89 @@
+<div class="game-archive">
+  <h2>Game Archive</h2>
+  
+  <div class="filters" *ngIf="playerUsername">
+    <div class="filter-group">
+      <label for="year-select">Year:</label>
+      <select id="year-select" [value]="selectedYear" (change)="onYearChange($event)">
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+      </select>
+    </div>
+    
+    <div class="filter-group">
+      <label for="month-select">Month:</label>
+      <select id="month-select" [value]="selectedMonth" (change)="onMonthChange($event)">
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="loading">
+    <p>Loading games...</p>
+  </div>
+
+  <div class="games-list" *ngIf="!loading && games.length > 0">
+    <div class="games-header">
+      <span>Found {{ games.length }} games</span>
+    </div>
+    
+    <div class="game-item" *ngFor="let game of games; trackBy: trackByGameUrl">
+      <div class="game-info">
+        <div class="game-rating">
+          <span class="white-rating">{{ game.white.rating }}</span>
+          <span class="vs">vs</span>
+          <span class="black-rating">{{ game.black.rating }}</span>
+        </div>
+        
+        <div class="game-result">
+          <span class="result" [ngClass]="getGameResult(game, playerUsername || '')">
+            {{ getGameResult(game, playerUsername || '') }}
+          </span>
+        </div>
+        
+        <div class="game-details">
+          <span class="eco">{{ game.eco }}</span>
+          <span class="rated" *ngIf="game.rated">Rated</span>
+          <span class="casual" *ngIf="!game.rated">Casual</span>
+        </div>
+        
+        <div class="game-accuracy" *ngIf="game.accuracies">
+          <span class="accuracy-white" *ngIf="game.accuracies.white">
+            White: {{ game.accuracies.white }}%
+          </span>
+          <span class="accuracy-black" *ngIf="game.accuracies.black">
+            Black: {{ game.accuracies.black }}%
+          </span>
+        </div>
+      </div>
+      
+      <div class="game-actions">
+        <a [href]="game.url" target="_blank" class="view-game-btn">
+          View Game
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-games" *ngIf="!loading && games.length === 0 && playerUsername">
+    <p>No games found for {{ selectedMonth }}/{{ selectedYear }}</p>
+  </div>
+
+  <div class="no-player" *ngIf="!playerUsername">
+    <p>No player selected</p>
+  </div>
+</div>

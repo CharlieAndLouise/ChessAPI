@@ -45,10 +45,17 @@
 
 .player-content {
   padding: 2rem;
-
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   
+  #player_profile,
+  #game_archive {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
   
   h2 {
     margin-top: 0;

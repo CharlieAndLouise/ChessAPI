@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SharedModule } from '../../shared';
 import { PlayerInformationComponent } from './player-information/player-information.component';
+import { GameArchiveComponent } from './game-archive/game-archive.component';
 
 @Component({
   selector: 'app-player',
   standalone: true,
-  imports: [SharedModule, PlayerInformationComponent],
+  imports: [SharedModule, PlayerInformationComponent, GameArchiveComponent],
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.scss']
 })

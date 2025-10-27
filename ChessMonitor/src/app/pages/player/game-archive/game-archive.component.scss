@@ -1,0 +1,225 @@
+.game-archive {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      label {
+        font-weight: 600;
+        color: #555;
+      }
+
+      select {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        font-size: 1rem;
+
+        &:focus {
+          outline: none;
+          border-color: #007bff;
+          box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+      }
+    }
+  }
+
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    color: #666;
+  }
+
+  .games-list {
+    .games-header {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .game-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      background-color: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.2s ease;
+
+      &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .game-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        flex: 1;
+
+        .game-rating {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 600;
+
+          .white-rating {
+            color: #8B4513;
+          }
+
+          .vs {
+            color: #666;
+            font-size: 0.9rem;
+          }
+
+          .black-rating {
+            color: #333;
+          }
+        }
+
+        .game-result {
+          .result {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: capitalize;
+
+            &.win {
+              background-color: #d4edda;
+              color: #155724;
+            }
+
+            &.lose,
+            &.checkmated,
+            &.timeout,
+            &.resigned {
+              background-color: #f8d7da;
+              color: #721c24;
+            }
+
+            &.agreed,
+            &.repetition,
+            &.stalemate,
+            &.insufficient,
+            &.50move {
+              background-color: #fff3cd;
+              color: #856404;
+            }
+          }
+        }
+
+        .game-details {
+          display: flex;
+          gap: 0.5rem;
+          font-size: 0.875rem;
+
+          .eco {
+            background-color: #e9ecef;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: #495057;
+          }
+
+          .rated {
+            color: #28a745;
+            font-weight: 600;
+          }
+
+          .casual {
+            color: #6c757d;
+            font-weight: 600;
+          }
+        }
+
+        .game-accuracy {
+          display: flex;
+          gap: 0.5rem;
+          font-size: 0.875rem;
+          color: #666;
+
+          .accuracy-white,
+          .accuracy-black {
+            background-color: #f8f9fa;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+          }
+        }
+      }
+
+      .game-actions {
+        .view-game-btn {
+          background-color: #007bff;
+          color: white;
+          padding: 0.5rem 1rem;
+          text-decoration: none;
+          border-radius: 4px;
+          font-size: 0.875rem;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+    }
+  }
+
+  .no-games,
+  .no-player {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-archive {
+    padding: 0.5rem;
+
+    .filters {
+      flex-direction: column;
+    }
+
+    .games-list {
+      .game-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+
+        .game-actions {
+          align-self: stretch;
+
+          .view-game-btn {
+            display: block;
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
